@@ -1,20 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Fabulinus</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- React and Babel CDN -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabulinus - Master English Communication</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+      /* Essential body/html styles for consistent scrolling */
+      html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          overflow-y: auto; /* Allow scrolling on the body if content overflows */
+      }
+      body {
+          font-family: 'Inter', sans-serif;
+          box-sizing: border-box;
+      }
+      /* Ensure images are fluid */
+      img {
+          max-width: 100%;
+          height: auto;
+      }
+    </style>
 </head>
-<body>
-  <div id="root"></div>
-  <!-- Load your App.js via Babel -->
-  <script type="text/babel" src="src/App.js"></script>
-  <script type="text/babel">
-    ReactDOM.render(<App />, document.getElementById('root'));
-  </script>
+<body class="antialiased">
+    <div id="root" class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 text-gray-800"></div>
+
+    <!-- React and ReactDOM CDNs -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel CDN for JSX transformation in browser (for development/simple hosting) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your React App component -->
+    <script type="text/babel" src="src/App.js"></script>
+
+    <script type="text/babel">
+      // This will render your App component into the 'root' div
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
 </body>
 </html>

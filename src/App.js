@@ -149,9 +149,9 @@ const LearnersSocialProof = ({ whiteText }) => {
     return (
         <div className="flex flex-col items-center justify-center mt-8 space-x-4">
             <div className="flex -space-x-3 mb-3">
-                <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="/public/1.png" alt="Learner Profile 1" />
-                <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="/public/2.png" alt="Learner Profile 2" />
-                <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="/public/3.png" alt="Learner Profile 3" />
+                <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="/1.png" alt="Learner Profile 1" />
+                <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="/2.png" alt="Learner Profile 2" />
+                <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="/3.png" alt="Learner Profile 3" />
             </div>
             <p className={`text-md sm:text-lg ${whiteText ? 'text-white' : 'text-gray-700'}`}>Trusted by 2,000 learners</p>
         </div>
@@ -205,15 +205,15 @@ const achievementsData = [
   { text: "Published in Indian & International Magazines", icon: <span style={{color: 'orange', fontSize: '32px'}}>📰</span> }, 
 ];
 const mediaLogosData = [
-  { src: "/public/hindustantimes.png", alt: "Hindustan Times" }, 
-  { src: "/public/Republic.png", alt: "Republic" },
-  { src: "/public/thehindu.png", alt: "The Hindu" },
-  { src: "/public/dainikjagran.png", alt: "Dainik Jagran" },
-  { src: "/public/dainikbhaskar.png", alt: "Dainik Bhaskar" },
-  { src: "/public/bt.png", alt: "Business Times" },
-  { src: "/public/DD.png", alt: "DD" },
-  { src: "/public/TOI.png", alt: "TOI" },
-  { src: "/public/amar.png", alt: "Amar Ujala" },
+  { src: "/hindustantimes.png", alt: "Hindustan Times" }, 
+  { src: "/Republic.png", alt: "Republic" },
+  { src: "/thehindu.png", alt: "The Hindu" },
+  { src: "/dainikjagran.png", alt: "Dainik Jagran" },
+  { src: "/dainikbhaskar.png", alt: "Dainik Bhaskar" },
+  { src: "/bt.png", alt: "Business Times" },
+  { src: "/DD.png", alt: "DD" },
+  { src: "/TOI.png", alt: "TOI" },
+  { src: "/amar.png", alt: "Amar Ujala" },
 ];
 
 
@@ -230,13 +230,13 @@ const SolutionsSection = () => {
 
   // In SolutionsSection, use local book images
   const bookImages = [
-    { src: "/public/book1.png", alt: "Book 1" },
-    { src: "/public/book2.png", alt: "Book 2" },
-    { src: "/public/book3.png", alt: "Book 3" },
-    { src: "/public/book4.png" , alt: "Book 4" },
-    { src: "/public/book5.png", alt: "Book 5" },
-    { src: "/public/book6.png", alt: "Book 6" },
-    { src: "/public/book7.png", alt: "Book 7" }
+    { src: "/book1.png", alt: "Book 1" },
+    { src: "/book2.png", alt: "Book 2" },
+    { src: "/book3.png", alt: "Book 3" },
+    { src: "/book4.png" , alt: "Book 4" },
+    { src: "/book5.png", alt: "Book 5" },
+    { src: "/book6.png", alt: "Book 6" },
+    { src: "/book7.png", alt: "Book 7" }
   ];
 
   return (
@@ -308,9 +308,9 @@ const TestimonialsSection = () => {
 
   // Use local images for testimonials
   const testimonialsData = [
-    { quote: "I took classes at my time of convenience, and when I missed I used recording, Aparna Ma'am helped me in understanding aspects of good English communication.", name: "Sonal Kapoor", program: "Student – Young Learner Program", image: "/public/1.png" },
-    { quote: "I'm extremely grateful to Aparna Ma'am and Fabulinus teachers for helping me clear my concepts and supporting me every step of the way.", name: "Darshan Nagpal", program: "Student – Advantage English Program", image: "/public/2.png" },
-    { quote: "I was able to crack my job interview—Fabulinus truly transformed my communication, a big Thank you! :)", name: "Sneha Gupta", program: "Professional – Competitive Edge Program", image: "/public/3.png" }
+    { quote: "I took classes at my time of convenience, and when I missed I used recording, Aparna Ma'am helped me in understanding aspects of good English communication.", name: "Sonal Kapoor", program: "Student – Young Learner Program", image: "/1.png" },
+    { quote: "I'm extremely grateful to Aparna Ma'am and Fabulinus teachers for helping me clear my concepts and supporting me every step of the way.", name: "Darshan Nagpal", program: "Student – Advantage English Program", image: "/2.png" },
+    { quote: "I was able to crack my job interview—Fabulinus truly transformed my communication, a big Thank you! :)", name: "Sneha Gupta", program: "Professional – Competitive Edge Program", image: "/3.png" }
   ];
 
   return (
