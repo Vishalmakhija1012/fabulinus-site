@@ -1,0 +1,182 @@
+/* General body styles are in index.html for critical rendering path */
+
+/* Custom Keyframes for Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Refined blob animations for ambient effect */
+@keyframes blob {
+  0%, 100% { transform: scale(1) translate(0px, 0px); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  33% { transform: scale(1.1) translate(30px, -20px); border-radius: 30% 70% 60% 40% / 70% 40% 60% 30%; }
+  66% { transform: scale(0.9) translate(-20px, 20px); border-radius: 70% 30% 40% 60% / 40% 70% 30% 60%; }
+}
+@keyframes blob-alt {
+    0%, 100% { transform: scale(1) translate(0px, 0px); border-radius: 40% 60% 70% 30% / 30% 60% 40% 70%; }
+    50% { transform: scale(1.2) translate(-20px, 30px); border-radius: 70% 30% 40% 60% / 60% 70% 30% 40%; }
+    66% { transform: scale(0.8) translate(20px, -30px); border-radius: 30% 70% 60% 40% / 70% 40% 60% 30%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
+.animate-fadeInUp { animation: fadeInUp 0.7s ease-out forwards; }
+.animate-fadeInScale { animation: fadeInScale 0.7s ease-out forwards; }
+.animate-slideInLeft { animation: slideInLeft 0.7s ease-out forwards; }
+.animate-slideInRight { animation: slideInRight 0.7s ease-out forwards; }
+.animate-blob { animation: blob 8s infinite ease-in-out; }
+.animate-blob-alt { animation: blob-alt 9s infinite ease-in-out alternate; }
+.animate-float { animation: float 3s infinite ease-in-out; }
+.animate-gradientShift { background-size: 400% 400%; animation: gradientShift 15s ease infinite; }
+
+/* Custom scrollbar hide for aesthetic purposes */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Accordion specific styles */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.accordion-content.open {
+  max-height: 500px; /* Adjust based on max expected content height */
+}
+.accordion-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* Tooltip specific styles for mobile */
+.tooltip-wrapper {
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; /* Vertically center icon relative to its own cell space */
+    min-height: 28px; /* Standard icon height */
+    text-align: center; 
+    flex-direction: column; /* Stack icon and potential tooltip text */
+}
+.tooltip-bubble {
+    position: absolute;
+    background-color: #333; 
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    white-space: normal;
+    width: 140px; 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 20; 
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    pointer-events: none; 
+}
+.tooltip-bubble.show {
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+/* Tooltip positioning for Fabulinus (left side of icon) */
+.comparison-cell-fabulinus .tooltip-bubble {
+    right: calc(100% + 8px); 
+    top: 50%;
+    transform: translateY(-50%);
+}
+.comparison-cell-fabulinus .tooltip-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%; 
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip positioning for Others (right side of icon) */
+.comparison-cell-others .tooltip-bubble {
+    left: calc(100% + 8px); 
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.comparison-cell-others .tooltip-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%; 
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure detail text is always visible on desktop and hide tooltip on mobile */
+@media (min-width: 768px) {
+    .mobile-tooltip-container {
+        display: none !important; 
+    }
+    /* Desktop text always visible, aligned correctly */
+    .desktop-detail-text {
+        display: block !important;
+        position: static !important;
+        background-color: transparent !important;
+        color: inherit !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        white-space: normal !important;
+        width: auto !important;
+        font-size: 0.875rem !important; 
+        line-height: 1.25rem !important; 
+        box-shadow: none !important;
+        z-index: auto !important;
+        pointer-events: auto !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        margin-top: 0.25rem; /* mt-1 */
+    }
+    .desktop-detail-text::after {
+        display: none !important;
+    }
+}
